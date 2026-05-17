@@ -2,26 +2,21 @@
 
 This repository contains the control code for an FRC swerve drive chassis powered by 8 Talon FX Kraken X60 motors using SDS MK4i swerve modules.
 
-The drivetrain uses 4 SDS MK4i swerve modules with:
-- 1 drive motor per module
-- 1 steering motor per module
-
-Total:
-- 8 Kraken X60 Motors
-- 4 SDS MK4i Modules
+The drivetrain uses YAGSL (Yet Another Generic Swerve Library) for swerve kinematics and odometry.
 
 ---
 
 ## Overview
 
-This project is designed for a high-performance FRC swerve drivetrain capable of:
-- Holonomic movement
-- Precision steering
-- Fast acceleration
-- High maneuverability
-- Field-oriented driving
+This project implements a high-performance swerve drivetrain capable of:
 
-The codebase is built using WPILib and follows the standard FRC Java robot project structure.
+- Holonomic (omnidirectional) movement
+- Field-oriented control
+- Precise rotation and translation
+- Smooth autonomous path following
+- Real-time odometry tracking using YAGSL
+
+Built using WPILib and structured for competitive FRC robotics.
 
 ---
 
@@ -31,47 +26,64 @@ The codebase is built using WPILib and follows the standard FRC Java robot proje
 - SDS MK4i Swerve Modules
 
 ### Motors
-- Talon FX Kraken X60 Motors
+- 8x Talon FX Kraken X60 Motors
 
 ### Motor Controllers
-- Integrated Talon FX Controllers
+- Integrated Talon FX (Kraken X60)
 
-### Framework
-- WPILib
-
-### Programming Language
-- Java
+### Control System
+- WPILib (FRC Framework)
+- YAGSL (Swerve Drive Library)
 
 ---
 
 ## Drivetrain Structure
 
-Each swerve module contains:
+Each SDS MK4i module contains:
+
 - 1 Kraken X60 drive motor
 - 1 Kraken X60 steering motor
 
-Module Layout:
+### Module Layout
 - Front Left
 - Front Right
 - Back Left
 - Back Right
 
-Total Motors:
+### Total Motors
 - 4 Drive Motors
 - 4 Steering Motors
-- 8 Motors Overall
+- 8 Total Motors
 
 ---
 
-## Features
+## Key Features
 
-- Full swerve drive control
-- Independent wheel steering
-- Field-oriented driving support
-- High-performance Kraken X60 motor integration
+- Full swerve drive implementation
+- Independent wheel steering control
+- Field-oriented driving
+- High-performance Kraken X60 integration
 - SDS MK4i module configuration
-- Expandable subsystem architecture
-- Teleop and autonomous ready
+- YAGSL-based kinematics and odometry
+- Real-time robot pose tracking
+- Autonomous-ready architecture
+
+---
+
+## YAGSL Integration
+
+This project uses YAGSL for:
+
+- Swerve kinematics calculations
+- Odometry (robot position tracking)
+- Module state management
+- Trajectory following support
+
+YAGSL simplifies:
+- Drive calculations
+- Encoder integration
+- Field-relative movement
+- Pose estimation
 
 ---
 
